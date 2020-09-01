@@ -1,0 +1,110 @@
+{
+	"variables": [],
+	"info": {
+		"name": "aplicativo-emprestimo",
+		"_postman_id": "bc3bdd91-2e76-3b05-5ed6-fee09a87d153",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CadastroUsuario",
+			"request": {
+				"url": "http://localhost:8080/usuarios",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\":\"Teste Final\",\n\t\"cpf\":\"05589999999\",\n\t\"telefone\":\"3132266985\",\n\t\"email\":\"final@teste.com.br\",\n\t\"senha\":\"1234\",\n\t\"endereco\":\"rua tal numero 5\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "SolicitarEmprestimo",
+			"request": {
+				"url": "http://localhost:8080/emprestimos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-user-token",
+						"value": "gEe5clPrA1",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"usuarioId\":8,\n\t\"valor\":2000.00\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarEmprestimosUsuario",
+			"request": {
+				"url": "http://localhost:8080/emprestimos/user/8",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-user-token",
+						"value": "gEe5clPrA1",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarEmprestimo",
+			"request": {
+				"url": "http://localhost:8080/emprestimos/4/user/8",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-user-token",
+						"value": "gEe5clPrA1",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "LoginUsuario",
+			"request": {
+				"url": "http://localhost:8080/usuarios/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"final@teste.com.br\",\n\t\"senha\": \"1234\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
