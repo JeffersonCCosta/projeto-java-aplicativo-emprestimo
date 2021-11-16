@@ -1,1 +1,1 @@
-# aplicativo-emprestimo-trainee-tqi
+# aplicativo-emprestimo
